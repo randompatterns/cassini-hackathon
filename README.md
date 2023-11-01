@@ -76,3 +76,10 @@ for i, path in enumerate(sorted(pathlib.Path("output/batch_job/").glob("*tif"))[
     ax.set_title(path.name)
 
 ```
+### Country bounding boxes:
+
+https://gist.github.com/graydon/11198540
+
+### Country and regions:
+
+https://gist.github.com/kuwapa/a002b7abbeeaaa1b27fd31ac9840a5dd
