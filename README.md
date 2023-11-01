@@ -26,3 +26,10 @@ http://bboxfinder.com/#0.000000,0.000000,0.000000,0.000000
 dashboard with sentinel credentials:
 
 https://shapps.dataspace.copernicus.eu/dashboard/#/
+
+WGS84
+[(longitude and latitude coordinates of lower left and upper right corners)]
+
+'''
+import openeo
+'''
