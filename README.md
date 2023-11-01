@@ -39,6 +39,7 @@ import rasterio
 import matplotlib.pyplot as plt
 
 connection = openeo.connect(url="openeo.dataspace.copernicus.eu")
+#To authenticate: visit https://aai.egi.eu/auth/realms/egi/device and enter the user code 'SLUO-BMUD'
 connection.authenticate_oidc()
 
 #print all available datasets
