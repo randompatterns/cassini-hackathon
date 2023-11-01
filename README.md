@@ -22,3 +22,7 @@ https://sentinelhub-py.readthedocs.io/en/latest/
 box finder:
 
 http://bboxfinder.com/#0.000000,0.000000,0.000000,0.000000
+
+dashboard with sentinel credentials:
+
+https://shapps.dataspace.copernicus.eu/dashboard/#/
