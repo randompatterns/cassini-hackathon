@@ -1,7 +1,7 @@
 # cassini-hackathon
 cassini hackathon 2023
 
-Description of satelites:
+### Description of satelites:
 1. Weather
 2. (B) Vegetation 13 spectral bands
 3. Near real time water and ocea topography, color, temperature
@@ -13,17 +13,17 @@ https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data
 
 https://www.esa.int/Applications/Observing_the_Earth/Copernicus/The_Sentinel_missions
 
-openeo & sentinelhub documentation:
+### openeo & sentinelhub documentation:
 
 https://docs.openeo.cloud/getting-started/python/#installation
 
 https://sentinelhub-py.readthedocs.io/en/latest/
 
-box finder:
+### box finder:
 
 http://bboxfinder.com/#0.000000,0.000000,0.000000,0.000000
 
-dashboard with sentinel credentials:
+### dashboard with sentinel credentials:
 
 https://shapps.dataspace.copernicus.eu/dashboard/#/
 
@@ -43,14 +43,14 @@ connection.authenticate_oidc()
 
 cube = connection.load_collection(
     "SENTINEL2_L2A",
-    bands=["B04", "B03", "B02"],
-    temporal_extent=("2022-05-01", "2022-05-30"),
+    bands=["B04", "B03", "B02"], #-> RGB channel
+    temporal_extent=("2022-05-01", "2022-05-30"), #-> timeframe
     spatial_extent={
         "west": 3.202609,
         "south": 51.189474,
         "east": 3.254708,
         "north": 51.204641,
-        "crs": "EPSG:4326",
+        "crs": "EPSG:4326", #-> EPSG:4326 Geodetic coordinate system for World
     },
     max_cloud_cover=50,
 )
