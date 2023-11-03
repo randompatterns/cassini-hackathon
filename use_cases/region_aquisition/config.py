@@ -41,7 +41,7 @@ class AcquireRegionalCubeDependencies(UserDict):
     sentinel2_l2a_collection: OpeneoRepository = SENTINEL2_L2A_COLLECTION
     rgb_bands: Bands = CUBE_RGB_BANDS
     cube_timeframe: TemporalExtent = CUBE_CUSTOM_TIMEFRAME
-    cube_region: SpatialExtent = CUBE_REGION_1
+    cube_region: SpatialExtent = POLAND
     cloud_coverage: CloudCoverage = CUBE_MAX_CLOUD_COVERAGE
     cube_format: CubeFormat = TIF_FORMAT
     batch_job_title: BatchJobTitle = JOB_1_TITLE
