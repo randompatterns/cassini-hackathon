@@ -4,16 +4,16 @@ class City:
         self.lat = lat
         self.lng = lng
 
-    def get_spatial_extent(self, radius=0.2):
+    def get_spatial_extent(self, radius=0.08):
         spatial_extent = {
-            "west": self.long-radius, 
+            "west": self.lng-radius, 
             "south": self.lat-radius, 
-            "east": self.long+radius, 
+            "east": self.lng+radius, 
             "north": self.lat+radius
         }
         return spatial_extent
 
-    def get_features(self, radius=0.15):
+    def get_features(self, radius=0.08):
         features = {
             "type": "FeatureCollection", 
             "features": [
@@ -24,11 +24,11 @@ class City:
                         "type": "Polygon", 
                         "coordinates": [
                             [
-                                [self.lat - radius, self.long - radius], 
-                                [self.lat + radius, self.long - radius], 
-                                [self.lat + radius, self.long + radius], 
-                                [self.lat - radius, self.long + radius], 
-                                [self.lat - radius, self.long - radius]
+                                [self.lat - radius, self.lng - radius], 
+                                [self.lat + radius, self.lng - radius], 
+                                [self.lat + radius, self.lng + radius], 
+                                [self.lat - radius, self.lng + radius], 
+                                [self.lat - radius, self.lng - radius]
                             ]
                         ]
                     }
