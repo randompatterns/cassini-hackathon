@@ -19,7 +19,7 @@ class TaskDataInterface(Protocol):
 
 
 class TaskInterface(Protocol):
-    def __call__(self, data: TaskDataInterface, *args: Any, **kwargs: Any) -> TaskDataInterface:
+    def __call__(self, *args: Any, **kwargs: Any) -> Optional[TaskDataInterface]:
         ...
 
 

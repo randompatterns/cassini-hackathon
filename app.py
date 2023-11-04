@@ -1,22 +1,28 @@
 from typing import Optional
 
-from core.interface import PipelineInterface
+from core.bootstrap import Bootstrap
+from core.decorators import logger
+from core.interface import PipelineInterface, DependenciesInterface
 from core.pipeline import Pipeline
-from use_cases.dependencies import Dependencies
 
 
 class App:
-    dependencies: Optional[Dependencies] = None
-    pipelines: dict[str, PipelineInterface] = {}
+    dependencies: Optional[DependenciesInterface] = None
+    pipeline: PipelineInterface
 
     def __init__(self, bootstrap: Bootstrap):
         self.bootstrap = bootstrap
 
+    @logger
     def register_pipeline(self, pipeline: Pipeline):
-        self.pipelines[pipeline.name] = pipeline
+        self.pipeline = pipeline
 
-    def inject_dependencies(self, dependencies: Dependencies):
-        ...  # call bootstrap to inject dependencies
+    @logger
+    def inject_dependencies(self, dependencies: dict):
+        for i, task in enumerate(self.pipeline.tasks):
+            injected_task = self.bootstrap.inject_dependencies(task, dependencies)
+            self.pipeline.tasks[i] = injected_task
 
-    def execute_pipeline(self, name: str):
-        ...
+    @logger
+    def execute_pipeline(self):
+        self.pipeline.execute(None)

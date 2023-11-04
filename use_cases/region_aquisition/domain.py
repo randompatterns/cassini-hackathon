@@ -19,7 +19,7 @@ CollectionName = Literal[
 class Bands(list):
     @classmethod
     def rgb(cls) -> Bands:
-        return cls(["B02", "B03", "B04"])
+        return cls(["B04", "B03", "B02"])
 
 
 @dataclass

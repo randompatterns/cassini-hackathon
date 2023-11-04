@@ -1,6 +1,6 @@
 from core.interface import TaskDataInterface
 
 
-class DetectCrowdTask:
+class DetectWaterLevel:
     def __call__(self, data: TaskDataInterface):
         ...
